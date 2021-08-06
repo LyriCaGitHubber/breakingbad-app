@@ -28,7 +28,7 @@ export function createCharacter(character) {
             className: 'character__race',
             childElements: [
               createElement('p', {
-                innerText: character.birthday,
+                innerText: `Birthday: ${character.birthday}`,
               }),
             ],
           }),
@@ -36,7 +36,7 @@ export function createCharacter(character) {
             className: 'CharacterFirstSeenIn',
             childElements: [
               createElement('p', {
-                innerText: 'First seen in',
+                innerText: `Actor: ${character.actor}`,
               }),
             ],
           }),

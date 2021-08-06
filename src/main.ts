@@ -3,7 +3,9 @@ import { createElement } from './utils/createElement';
 import { createCharacter } from './components/characters/characters';
 import { getCharacter } from './utils/api';
 
-const characters = await getCharacter();
+let offset = 0;
+
+const characters = await getCharacter(offset);
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
@@ -48,6 +50,17 @@ const mainPage = createElement('div', {
       childElements: characters.map((character) => {
         return createCharacter(character);
       }),
+    }),
+    createElement('input', {
+      className: 'showMore',
+      value: 'Mehr anzeigen',
+      type: 'button',
+      onclick: async () => {
+        offset = offset + 9;
+        const newCharacters = await getCharacter(offset);
+        const newCharacterArray = newCharacters.map((newCharacter) => createCharacter(newCharacter));
+        document.querySelector('main').append(...newCharacterArray);
+      },
     }),
   ],
 });
