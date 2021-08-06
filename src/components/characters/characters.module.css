@@ -1,0 +1,15 @@
+.character {
+  display: grid;
+  background: #3c3e44;
+  color: #fff;
+  align-items: center;
+  border-radius: 1em;
+  grid-gap: 1em;
+  padding: 1em;
+  grid-auto-flow: column;
+}
+
+.character__image {
+  width: 10em;
+  border-radius: 1em;
+}

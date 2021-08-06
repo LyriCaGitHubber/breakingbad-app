@@ -1,5 +1,6 @@
 import './style.css';
 import { createElement } from './utils/createElement';
+import { createCharacter } from './components/characters/characters';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
@@ -41,7 +42,12 @@ const mainPage = createElement('div', {
       ],
     }),
     createElement('main', {
-      childElements: [],
+      childElements: [
+        createCharacter(),
+        createCharacter(),
+        createCharacter(),
+        createCharacter(),
+      ],
     }),
   ],
 });
