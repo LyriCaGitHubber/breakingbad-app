@@ -1,9 +1,51 @@
 import './style.css';
+import { createElement } from './utils/createElement';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
+const mainPage = createElement('div', {
+  childElements: [
+    createElement('header', {
+      childElements: [
+        createElement('h1', {
+          innerHTML: 'Break<span class="greenChars">in</span>g Bad App',
+        }),
+      ],
+    }),
+    createElement('nav', {
+      className: 'main-navigation',
+      childElements: [
+        createElement('ul', {
+          childElements: [
+            createElement('li', {
+              childElements: [
+                createElement('a', {
+                  className: 'main-navigation__links',
+                  href: 'Link',
+                  innerText: 'Characters',
+                }),
+                createElement('a', {
+                  className: 'main-navigation__links',
+                  href: 'Link',
+                  innerText: 'Episodes',
+                }),
+                createElement('a', {
+                  className: 'main-navigation__links',
+                  href: 'Link',
+                  innerText: 'Information',
+                }),
+              ],
+            }),
+          ],
+        }),
+      ],
+    }),
+    createElement('main', {
+      childElements: [],
+    }),
+  ],
+});
+
 if (app !== null) {
-  app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>`;
+  app.append(mainPage);
 }

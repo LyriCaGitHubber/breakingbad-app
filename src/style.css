@@ -1,8 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --green-characters: rgb(72, 127, 90);
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.greenChars {
+  color: var(--green-characters);
+  font-weight: 900;
+}
+
+.main-navigation__links {
+  text-decoration: none;
+  color: black;
+}
+
+.main-navigation li {
+  list-style-type: none;
+}
+
+.main-navigation a {
+  padding-right: 2em;
+}
+
+.main-navigation a:hover {
+  color: var(--green-characters);
+  font-weight: 500;
+}
+
+main {
+  width: 60%;
 }
