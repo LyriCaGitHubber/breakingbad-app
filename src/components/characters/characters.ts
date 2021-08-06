@@ -1,7 +1,7 @@
 import { createElement } from '../../utils/createElement';
 import styles from './characters.module.css';
 
-export function createCharacter(character) {
+export function createCharacter(character): HTMLElement {
   return createElement('article', {
     className: styles.character,
     childElements: [
