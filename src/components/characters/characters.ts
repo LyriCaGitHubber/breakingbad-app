@@ -25,7 +25,7 @@ export function createCharacter(character): HTMLElement {
             ],
           }),
           createElement('section', {
-            className: 'character__race',
+            className: 'character__birthday',
             childElements: [
               createElement('p', {
                 innerText: `Birthday: ${character.birthday}`,
@@ -33,7 +33,7 @@ export function createCharacter(character): HTMLElement {
             ],
           }),
           createElement('section', {
-            className: 'CharacterFirstSeenIn',
+            className: 'character__actor',
             childElements: [
               createElement('p', {
                 innerText: `Actor: ${character.actor}`,
