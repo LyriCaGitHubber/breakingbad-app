@@ -1,20 +1,20 @@
 import { createElement } from '../../utils/createElement';
 import styles from './characters.module.css';
 
-export function createCharacter() {
+export function createCharacter(character) {
   return createElement('article', {
     className: styles.character,
     childElements: [
       createElement('img', {
         className: styles.character__image,
-        src: 'https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg',
+        src: character.img,
         alt: 'Character',
       }),
       createElement('div', {
         childElements: [
           createElement('h2', {
             className: 'character__name',
-            innerText: 'Name',
+            innerText: character.name,
           }),
           createElement('section', {
             className: 'character__aliveStatus',
@@ -28,7 +28,7 @@ export function createCharacter() {
             className: 'character__race',
             childElements: [
               createElement('p', {
-                innerText: 'Species',
+                innerText: character.birthday,
               }),
             ],
           }),

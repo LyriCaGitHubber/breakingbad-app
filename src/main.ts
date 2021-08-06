@@ -1,6 +1,9 @@
 import './style.css';
 import { createElement } from './utils/createElement';
 import { createCharacter } from './components/characters/characters';
+import { getCharacter } from './utils/api';
+
+const characters = await getCharacter();
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
@@ -42,12 +45,9 @@ const mainPage = createElement('div', {
       ],
     }),
     createElement('main', {
-      childElements: [
-        createCharacter(),
-        createCharacter(),
-        createCharacter(),
-        createCharacter(),
-      ],
+      childElements: characters.map((character) => {
+        return createCharacter(character);
+      }),
     }),
   ],
 });
