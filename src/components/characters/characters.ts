@@ -1,6 +1,7 @@
 import { createElement } from '../../utils/createElement';
 import styles from './characters.module.css';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function createCharacter(character): HTMLElement {
   return createElement('article', {
     className: styles.character,
